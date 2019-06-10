@@ -1,0 +1,21 @@
+@imageOpacity: .35;
+
+img {
+  margin: 5px;
+  opacity: @imageOpacity;
+}
+
+img:hover {
+  animation: fadeIn 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: @imageOpacity;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
