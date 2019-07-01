@@ -11,6 +11,7 @@
 *.userprefs
 [Aa]ssets/
 [Aa]pp/[Ss]ervices/[Dd]ata/
+PublishProfiles/
 
 # Build results
 [Dd]ebug/
