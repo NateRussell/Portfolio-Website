@@ -10,7 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HomeComponent } from './home/home.component';
-import { ContactLinksComponent } from './contact-links/contact-links.component';
+import { ConnectComponent } from './connect/connect.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { ContactLinksComponent } from './contact-links/contact-links.component';
     AboutComponent,
     ProjectsComponent,
     HomeComponent,
-    ContactLinksComponent
+    ConnectComponent
   ],
   imports: [
     BrowserModule,

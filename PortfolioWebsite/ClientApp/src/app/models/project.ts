@@ -1,10 +1,13 @@
-import { Media } from './media';
+import { Content } from './content';
+
 
 export class Project
 {
   id: number;
   title: string;
   description: string;
-  media: Media[];
-  text: string;
+  created: Date;
+  modified: Date;
+  thumb: string;
+  content: Content[];
 }

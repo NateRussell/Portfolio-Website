@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Project } from '../models/project';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,16 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  index(): Observable<Project[]> {
+
+    return null;
+  }
+
+  get(id: number): Observable<Project> {
+
+    return null;
   }
 
 }
