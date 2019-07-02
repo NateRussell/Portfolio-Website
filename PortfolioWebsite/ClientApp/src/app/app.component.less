@@ -2,20 +2,21 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  align-items: stretch;
+  align-items: center;
   overflow: hidden;
-  max-width: 960px;
   margin: 0 auto;
 }
 
-#scroll-container {
-  flex-grow: 1;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+.width-container {
+  max-width: 960px;
+  width: 100%;
 }
 
-#content {
+#scroll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   flex-grow: 1;
+  overflow-y: auto;
 }
