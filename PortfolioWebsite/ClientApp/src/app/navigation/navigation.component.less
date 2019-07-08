@@ -1,10 +1,22 @@
+@import '../../assets/styles/variables.less';
+
 :host{
   display: flex;
-  padding: 0;
+  align-items: center;
 }
 
-li {
-  display: inline-block;
-  margin: 20px 10px;
-  //user-select: none;
+#open-menu {
+  display: none;
+  margin: 10px 10px;
+}
+
+@media only screen and (max-width: @pageWidth) {
+  #open-menu {
+    display: none;
+    display: inline-block;
+  }
+
+  #top-navigation {
+    display: none;
+  }
 }

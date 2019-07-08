@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HomeComponent } from './home/home.component';
 import { ConnectComponent } from './connect/connect.component';
+import { SideNavigationComponent } from './side-navigation/side-navigation.component';
+import { NavigationItemsComponent } from './navigation-items/navigation-items.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,14 @@ import { ConnectComponent } from './connect/connect.component';
     AboutComponent,
     ProjectsComponent,
     HomeComponent,
-    ConnectComponent
+    ConnectComponent,
+    SideNavigationComponent,
+    NavigationItemsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
