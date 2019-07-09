@@ -2,9 +2,9 @@
 <div id="page">
   <div class="width-container"><app-header (openMenuEvent)="sideNavigation.toggle()"></app-header></div>
   <div id="body">
-    <div class="width-container"><router-outlet></router-outlet></div>
-    <div class="width-container"><app-footer></app-footer></div>
+    <div id ="content"class="width-container"><router-outlet></router-outlet></div>
+    <div id="footer" class="width-container"><app-footer></app-footer></div>
   </div>
-  <div id="page-overlay" *ngIf="sideNavigation.state === 'open'" ></div>
+  <div id="overlay" *ngIf="sideNavigation.isOpen()" (click)="sideNavigation.close()"></div>
 </div>
 
