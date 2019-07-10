@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  @Output() openMenuEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Output() openMenuEvent: EventEmitter<null> = new EventEmitter<null>();
 
   constructor() { }
 

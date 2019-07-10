@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-items',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationItemsComponent implements OnInit {
 
+  @Output() closeMenuEvent: EventEmitter<null> = new EventEmitter<null>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  closeMenu() {
+    this.closeMenuEvent.emit(null);
   }
 
 }
