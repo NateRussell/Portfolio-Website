@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { ConnectComponent } from './connect/connect.component';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { NavigationItemsComponent } from './navigation-items/navigation-items.component';
+import { OverlayComponent } from './utility-components/overlay/overlay.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavigationItemsComponent } from './navigation-items/navigation-items.co
     HomeComponent,
     ConnectComponent,
     SideNavigationComponent,
-    NavigationItemsComponent
+    NavigationItemsComponent,
+    OverlayComponent
   ],
   imports: [
     BrowserModule,

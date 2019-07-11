@@ -19,12 +19,9 @@ import {
       state('closed', style({
         width: '0'
       })),
-      transition('open => closed', [
+      transition('open <=> closed', [
         animate('.35s')
-      ]),
-      transition('closed => open', [
-        animate('.35s')
-      ]),
+      ])
     ])
   ]
 })
