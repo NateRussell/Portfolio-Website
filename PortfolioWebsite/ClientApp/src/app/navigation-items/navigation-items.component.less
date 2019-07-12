@@ -5,12 +5,25 @@
   align-items: center;
 }
 
-div {
-  margin: 10px;
+a {
+  margin: 5px;
+  padding: 5px;
 }
 
 .active {
-  color: @white;
+  color: white;
+}
+
+@keyframes colorFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .active:hover {

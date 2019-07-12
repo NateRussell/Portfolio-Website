@@ -1,9 +1,13 @@
 <app-side-navigation #sideNavigation></app-side-navigation>
 <div id="page">
-  <div class="width-container"><app-header (openMenuEvent)="sideNavigation.toggle()"></app-header></div>
+  <div id="header">
+    <div class="width-container"><app-header (openMenuEvent)="sideNavigation.toggle()"></app-header></div>
+  </div>
   <div id="body">
-    <div id ="content"class="width-container"><router-outlet></router-outlet></div>
-    <div id="footer" class="width-container"><app-footer></app-footer></div>
+    <div class="width-container">
+      <div id="content"><router-outlet></router-outlet></div>
+      <div id="footer"><app-footer></app-footer></div>
+    </div>
   </div>
   <app-overlay [state]="sideNavigation.isOpen() ? 'in' : 'out'" (click)="sideNavigation.close()"></app-overlay>
 </div>

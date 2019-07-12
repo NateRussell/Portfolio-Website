@@ -9,6 +9,33 @@
 
 img {
   height: 45px;
-  height: 45px;
-  margin: 0 10px;
+  margin: 10px 10px;
+}
+
+a:hover img {
+  animation: iconAnimation;
+  animation-duration: .35s;
+  animation-fill-mode:forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes iconAnimation {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(.6, 1.4, 1);
+    
+  }
+  60% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  80% {
+    transform: scale3d(1.2, .8, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
