@@ -4,7 +4,10 @@ import {
   state,
   style,
   animate,
-  transition
+  group,
+  transition,
+  query,
+  sequence
 } from '@angular/animations';
 
 @Component({
@@ -13,54 +16,52 @@ import {
   styleUrls: ['./side-navigation.component.less'],
   animations: [
     trigger('openClose', [
-      state('open', style({
-        width: '15em'
-      })),
-      state('closed', style({
-        width: '0'
-      })),
-      transition('open <=> closed', [
-        animate('.35s')
+      state('true',
+        style({ width: '15em' })
+      ),
+      state('false',
+        style({ width: '0' }),
+      ),
+      transition('true => false', [
+        group([
+          query('#side-navigation-items', [
+            animate('.35s', style({ opacity: 0 }))
+          ]),
+          animate('.35s', style({ width: 0 })),
+        ])
+      ]),
+      transition('false => true', [
+        query('#side-navigation-items',[
+          style({ opacity: 0 })
+        ]),
+        group([
+          animate('.35s', style({ width: '15em' })),
+          query('#side-navigation-items', [
+            animate('.35s', style({ opacity: 1 }))
+          ]),
+        ])
       ])
     ])
   ]
 })
 export class SideNavigationComponent implements OnInit {
 
-  private state :'opened' | 'closed' = 'closed';
+  private isOpen: boolean = false;
 
-  @HostBinding('@openClose') get openClose() :string {
-    return this.state === 'opened' ? 'open' : 'closed';
+  @HostBinding('@openClose') get openClose() :boolean {
+    return this.isOpen;
   }
 
   close(): void {
-    this.state = 'closed'
+    this.isOpen = false;
   }
 
   open(): void {
-    this.state = 'opened'
+    this.isOpen = true;
   }
 
   toggle(): void {
-    if (this.state === 'opened') {
-      this.state = 'closed'
-    }
-    else {
-      this.state = 'opened'
-    }
-  }
-
-  isOpen(): boolean {
-    if (this.state === 'opened') {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-
-  isClosed(): boolean {
-    return !this.isOpen();
+    this.isOpen = !this.isOpen;
   }
 
   constructor() { }

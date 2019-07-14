@@ -5,10 +5,10 @@
   </div>
   <div id="body">
     <div class="width-container">
-      <div id="content"><router-outlet></router-outlet></div>
+      <div id="content" [@routeAnimations]="router.url"><router-outlet #outlet></router-outlet></div>
       <div id="footer"><app-footer></app-footer></div>
     </div>
   </div>
-  <app-overlay [state]="sideNavigation.isOpen() ? 'in' : 'out'" (click)="sideNavigation.close()"></app-overlay>
+  <app-overlay [show]="sideNavigation.isOpen" (click)="sideNavigation.close()"></app-overlay>
 </div>
 

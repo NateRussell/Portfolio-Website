@@ -4,7 +4,7 @@ import {
   state,
   style,
   animate,
-  transition
+  transition,
 } from '@angular/animations';
 @Component({
   selector: 'app-overlay',
@@ -12,22 +12,22 @@ import {
   styleUrls: ['./overlay.component.less'],
   animations: [
     trigger('fadeInOut', [
-      state('in', style({ opacity: '.75', display: 'initial' })),
-      state('out', style({ opacity: '0', display: 'none' })),
-      transition('in <=> out', [
+      state('true', style({ opacity: '.75', display: 'initial' })),
+      state('false', style({ opacity: '0', display: 'none' })),
+      transition('* <=> *', [
         style({ display: 'initial' }),
         animate('.35s')
-      ])
+      ]),
     ])
   ]
 })
 export class OverlayComponent implements OnInit {
 
-  @HostBinding('@fadeInOut') get fadeInOut(): string {
-    return this.state;
+  @HostBinding('@fadeInOut') get fadeInOut(): boolean {
+    return this.show;
   }
 
-  @Input() state: 'in' | 'out' = 'out';
+  @Input() show: boolean = false;
 
   constructor() {
 
