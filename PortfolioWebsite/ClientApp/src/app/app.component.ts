@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import {
   trigger,
   style,
@@ -31,17 +30,11 @@ import {
 export class AppComponent implements OnInit {
   title = 'ClientApp';
 
-  constructor(private router: Router) {
+  constructor() {
     
   }
 
   ngOnInit() {
-
-  }
-
-  getRoute() :string {
-    console.log(this.router.url);
-    return (this.router.url);
 
   }
 }
