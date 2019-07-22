@@ -5,7 +5,10 @@ import {
   animate,
   transition,
   animateChild,
-  query
+  query,
+
+  state,
+  group
 } from '@angular/animations';
 
 @Component({
@@ -23,6 +26,23 @@ import {
           animate('.35s', style({ opacity: 1 })),
           animateChild()
         ], { optional: true })
+      ])
+    ]),
+    trigger('shiftLeft', [
+      state('true', style({
+          left: '-15em'
+        })
+      ),
+      state('false', style({
+          left: 0
+        })
+      ),
+      transition('true <=> false', [
+        group([
+          query('@fadeInOut', [animateChild()], { optional: true }),
+          animate('.35s')
+          
+        ])
       ])
     ])
   ]
