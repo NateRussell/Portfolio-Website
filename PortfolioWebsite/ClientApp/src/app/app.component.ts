@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ElementRef } from '@angular/core';
 import {
   trigger,
   style,
@@ -6,8 +6,7 @@ import {
   transition,
   animateChild,
   query,
-
-  state,
+  state,
   group
 } from '@angular/animations';
 
@@ -44,17 +43,41 @@ import {
           
         ])
       ])
+    ]),
+    trigger('headerFade', [
+      state('true', style({
+        backgroundColor: 'rgba(0, 0, 0, 0)'
+      })
+      ),
+      state('false', style({
+        backgroundColor: 'rgba(0,0,0, .8)'
+      })
+      ),
+      transition('true <=> false', [
+        animate('.35s')
+      ])
     ])
   ]
 })
 export class AppComponent implements OnInit {
   title = 'ClientApp';
 
-  constructor() {
+  scrollTop: boolean = true;
+
+  constructor(public el: ElementRef) {
     
   }
 
   ngOnInit() {
+    this.scrollTop 
+  }
 
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    if (window.scrollY <= 0) {
+      this.scrollTop = true;
+    } else {
+      this.scrollTop = false;
+    }
   }
 }

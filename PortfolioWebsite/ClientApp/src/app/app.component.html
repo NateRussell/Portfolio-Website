@@ -1,4 +1,4 @@
-<div id="header" [@shiftLeft]="sideNavigation.isOpen">
+<div id="header" [@shiftLeft]="sideNavigation.isOpen" [@headerFade]="scrollTop">
   <div class="width-container"><app-header (openMenuEvent)="sideNavigation.toggle()"></app-header></div>
 </div>
 <div id="body" [@shiftLeft]="sideNavigation.isOpen">
