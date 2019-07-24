@@ -5,6 +5,7 @@ import {
   style,
   animate,
   transition,
+  sequence,
 } from '@angular/animations';
 @Component({
   selector: 'app-overlay',
@@ -14,9 +15,11 @@ import {
     trigger('fadeInOut', [
       state('true', style({ opacity: '.75', display: 'initial' })),
       state('false', style({ opacity: '0', display: 'none' })),
-      transition('* <=> *', [
-        style({ display: 'initial' }),
-        animate('.35s')
+      transition('true <=> false', [
+        sequence([
+          style({ display: 'initial' }),
+          animate('.35s')
+        ])
       ]),
     ])
   ]

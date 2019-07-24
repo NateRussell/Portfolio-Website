@@ -6,7 +6,7 @@
     <div id="content" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"><router-outlet #o="outlet"></router-outlet></div>
     <div id="footer"><app-footer></app-footer></div>
   </div>
-  <app-overlay [show]="sideNavigation.isOpen" (click)="sideNavigation.close()" id="overlay"></app-overlay>
 </div>
+<div id="overlay-wrapper" [@shiftLeft]="sideNavigation.isOpen"><app-overlay id="overlay" [show]="sideNavigation.isOpen" (click)="sideNavigation.close()"></app-overlay></div>
 <app-side-navigation #sideNavigation id="side-navigation"></app-side-navigation>
 

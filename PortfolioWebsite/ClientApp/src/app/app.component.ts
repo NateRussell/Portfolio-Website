@@ -39,8 +39,7 @@ import {
       transition('true <=> false', [
         group([
           query('@fadeInOut', [animateChild()], { optional: true }),
-          animate('.35s')
-          
+          animate('.35s'),
         ])
       ])
     ]),
@@ -74,7 +73,7 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
-    if (window.scrollY <= 0) {
+    if ((window.scrollY || document.documentElement.scrollTop) <= 0) {
       this.scrollTop = true;
     } else {
       this.scrollTop = false;
