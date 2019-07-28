@@ -25,9 +25,9 @@ import {
       transition('true => false', [
         group([
           query('#side-navigation-items', [
-            animate('.35s', style({ opacity: 0 }))
+            animate('.4s', style({ opacity: 0 }))
           ]),
-          animate('.35s', style({ width: 0 })),
+          animate('.4s', style({ width: 0 })),
         ])
       ]),
       transition('false => true', [
@@ -35,9 +35,9 @@ import {
           style({ opacity: 0 })
         ]),
         group([
-          animate('.35s', style({ width: '15em' })),
+          animate('.4s', style({ width: '15em' })),
           query('#side-navigation-items', [
-            animate('.35s', style({ opacity: 1 }))
+            animate('.4s', style({ opacity: 1 }))
           ]),
         ])
       ])

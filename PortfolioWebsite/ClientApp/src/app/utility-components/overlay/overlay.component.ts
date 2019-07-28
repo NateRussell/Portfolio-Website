@@ -18,7 +18,7 @@ import {
       transition('true <=> false', [
         sequence([
           style({ display: 'initial' }),
-          animate('.35s')
+          animate('.4s')
         ])
       ]),
     ])

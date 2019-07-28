@@ -7,7 +7,9 @@ import {
   animateChild,
   query,
   state,
-  group
+  group,
+
+  sequence
 } from '@angular/animations';
 
 @Component({
@@ -17,14 +19,42 @@ import {
   animations: [
     trigger('routeAnimations', [
       transition('* <=> *', [
-        query(':enter', [
+        style({ position: 'relative' }),
+        query(':enter, :leave', [
           style({
-            opacity: 0,
-            display: 'inherit'
-          }),
-          animate('.35s', style({ opacity: 1 })),
-          animateChild()
-        ], { optional: true })
+            position: 'absolute',
+            left: 0,
+            right: 0
+          })
+        ], { optional: true }),
+        query(':enter',
+          [
+            style({
+              
+              opacity: 0
+            })
+          ],
+          { optional: true }
+        ),
+        query(':leave',
+          [
+            style({ opacity: 1 }),
+            animate('0.4s', style({
+              opacity: 0,
+              display: 'none'
+            }))
+          ],
+          { optional: true }
+        )
+        /*
+        query(':enter',
+          [
+            style({ opacity: 0 }),
+            animate('0.2s', style({ opacity: 1 }))
+          ],
+          { optional: true }
+        )
+        */
       ])
     ]),
     trigger('shiftLeft', [
@@ -38,8 +68,8 @@ import {
       ),
       transition('true <=> false', [
         group([
-          query('@fadeInOut', [animateChild()], { optional: true }),
-          animate('.35s'),
+          query('@*', [animateChild()], { optional: true }),
+          animate('.4s'),
         ])
       ])
     ]),
@@ -53,7 +83,13 @@ import {
       })
       ),
       transition('true <=> false', [
-        animate('.35s')
+        animate('.2s')
+      ])
+    ]),
+    trigger('footerFade', [
+      transition('* <=> *', [
+        style({ opacity: 0 }),
+        animate('.4s', style({ opacity: 0 }))
       ])
     ])
   ]
