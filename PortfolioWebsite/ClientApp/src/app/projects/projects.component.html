@@ -1,10 +1,12 @@
-<h2>Projects</h2>
+<app-inner-layout>
+  <h2>Projects</h2>
 
-<ul class="projects">
-  <li class="project" *ngFor="let project of projects">
-    <h3>{{project.title}}</h3>
-    <h4>created: {{project.created | date:"MMM yyyy"}}<span *ngIf="project.modified">, modified: {{project.modified | date:"MMM yyyy"}}</span></h4>
-    <img *ngIf="project.thumb" src="{{project.thumb}}" />
-    <p>{{project.description}}</p>
-  </li>
-</ul>
+  <ul class="projects">
+    <li class="project" *ngFor="let project of projects">
+      <h3>{{project.title}}</h3>
+      <h4>created: {{project.created | date:"MMM yyyy"}}<span *ngIf="project.modified">, modified: {{project.modified | date:"MMM yyyy"}}</span></h4>
+      <img *ngIf="project.thumb" src="{{project.thumb}}" />
+      <p>{{project.description}}</p>
+    </li>
+  </ul>
+</app-inner-layout>

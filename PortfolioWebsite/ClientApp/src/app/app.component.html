@@ -1,12 +1,13 @@
-<div id="header" [@shiftLeft]="sideNavigation.isOpen" [@headerFade]="scrollTop">
-  <div class="width-container"><app-header (openMenuEvent)="sideNavigation.toggle()"></app-header></div>
-</div>
-<div id="body" [@shiftLeft]="sideNavigation.isOpen">
-  <div class="width-container">
-    <div id="content"><div [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"><router-outlet id="outlet" #o="outlet"></router-outlet></div></div>
-    <div id="footer" [@footerFade]="o.isActivated ? o.activatedRoute : ''"><app-footer></app-footer></div>
+<div id="page" [@shiftLeft]="sideNavigation.isOpen">
+  <div id="header" [@headerFade]="scrollTop">
+    <div class="width-container"><app-header (openMenuEvent)="sideNavigation.toggle()"></app-header></div>
   </div>
+  <div id="body">
+    <div class="width-container">
+      <div id="outlet-wrapper" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"><router-outlet #o="outlet"></router-outlet></div>
+    </div>
+  </div>
+  <app-overlay id="overlay" [show]="sideNavigation.isOpen" (click)="sideNavigation.close()"></app-overlay>
 </div>
-<div id="overlay-wrapper" [@shiftLeft]="sideNavigation.isOpen"><app-overlay id="overlay" [show]="sideNavigation.isOpen" (click)="sideNavigation.close()"></app-overlay></div>
 <app-side-navigation #sideNavigation id="side-navigation"></app-side-navigation>
 
