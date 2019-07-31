@@ -31,7 +31,7 @@ export const routeTransitionAnimation = trigger('routeAnimations', [
     query(':leave',
       [
         style({ opacity: 1 }),
-        animate('0.2s', style({
+        animate('0.4s', style({
           opacity: 0,
           //display: 'none'
         }))
