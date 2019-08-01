@@ -12,7 +12,6 @@ import {
   state,
   sequence
 } from '@angular/animations';
-import { Transform } from 'stream';
 
 export const shiftInAnimation = trigger('shiftIn', [
   state('false', style({
