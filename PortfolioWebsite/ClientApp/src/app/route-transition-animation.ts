@@ -25,8 +25,7 @@ export const routeTransitionAnimation = trigger('routeAnimations', [
         style({
           opacity: 0
         })
-      ],
-      { optional: true }
+      ], { optional: true }
     ),
     query(':leave',
       [
@@ -35,10 +34,14 @@ export const routeTransitionAnimation = trigger('routeAnimations', [
           opacity: 0,
           //display: 'none'
         }))
-      ],
-      { optional: true }
+      ], { optional: true }
     ),
-    /*
+    query(':enter', [
+      query('@*', [animateChild()], { optional: true })
+      ], { optional: true }
+    )
+    
+    /* uncomment to add fade-in animation to route transitions
     query(':enter',
       [
         style({ opacity: 0 }),
