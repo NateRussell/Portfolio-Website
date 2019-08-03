@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Project } from '../models/project';
+import { Project } from '../../_models/project';
 
 @Component({
   selector: 'app-home',

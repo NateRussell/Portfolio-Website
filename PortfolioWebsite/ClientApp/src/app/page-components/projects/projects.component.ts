@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../services/project.service';
-import { Project } from '../models/project';
+import { ProjectService } from '../../_services/project.service';
+import { Project } from '../../_models/project';
 import { shiftInAnimation, fadeInAnimation } from '../content-enter-animations';
 
 @Component({
@@ -23,6 +23,6 @@ export class ProjectsComponent implements OnInit{
 
     setTimeout(() => {
       this.loadAnimations = true;
-    }, 500);
+    },500);
   }
 }

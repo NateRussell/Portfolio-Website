@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Project } from '../models/project';
+import { Project } from '../_models/project';
 import { PROJECTS } from './data/projects';
 
 @Injectable({

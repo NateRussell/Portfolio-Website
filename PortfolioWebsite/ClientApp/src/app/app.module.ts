@@ -3,19 +3,19 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { HomeComponent } from './home/home.component';
-import { ConnectComponent } from './connect/connect.component';
-import { SideNavigationComponent } from './side-navigation/side-navigation.component';
-import { NavigationItemsComponent } from './navigation-items/navigation-items.component';
+import { AppComponent } from './layout-components/app.component';
+import { HeaderComponent } from './layout-components/header/header.component';
+import { FooterComponent } from './layout-components/footer/footer.component';
+import { NavigationComponent } from './layout-components/navigation/navigation.component';
+import { ContactComponent } from './page-components/contact/contact.component';
+import { AboutComponent } from './page-components/about/about.component';
+import { ProjectsComponent } from './page-components/projects/projects.component';
+import { HomeComponent } from './page-components/home/home.component';
+import { ConnectComponent } from './sub-components/connect/connect.component';
+import { SideNavigationComponent } from './layout-components/side-navigation/side-navigation.component';
+import { NavigationItemsComponent } from './layout-components/navigation-items/navigation-items.component';
 import { OverlayComponent } from './utility-components/overlay/overlay.component';
-import { InnerLayoutComponent } from './inner-layout/inner-layout.component';
+import { InnerLayoutComponent } from './layout-components/inner-layout/inner-layout.component';
 import { RouteReuseStrategy } from '@angular/router';
 
 @NgModule({
