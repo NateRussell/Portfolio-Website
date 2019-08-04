@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-navigation-items',
-  templateUrl: './navigation-items.component.html',
-  styleUrls: ['./navigation-items.component.less']
+  selector: 'app-side-navigation',
+  templateUrl: '../navigation/navigation.component.html',
+  styleUrls: ['./side-navigation.component.less']
 })
-export class NavigationItemsComponent implements OnInit {
+export class SideNavigationComponent implements OnInit {
 
   @Output() closeMenuEvent: EventEmitter<null> = new EventEmitter<null>();
 

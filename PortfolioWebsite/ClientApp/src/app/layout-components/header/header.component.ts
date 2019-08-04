@@ -7,12 +7,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() openMenuEvent: EventEmitter<null> = new EventEmitter<null>();
+  @Output() toggleMenuEvent: EventEmitter<null> = new EventEmitter<null>();
 
   constructor() { }
 
-  openMenu() {
-    this.openMenuEvent.emit(null);
+  toggleMenu() {
+    this.toggleMenuEvent.emit(null);
   }
 
   ngOnInit() {

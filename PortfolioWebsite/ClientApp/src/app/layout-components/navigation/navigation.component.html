@@ -1,2 +1,4 @@
-<app-navigation-items id="top-navigation"></app-navigation-items>
-<div id="open-menu"><h2><a src="#" (click)="openMenu()">&#9776;</a></h2></div>
+<a routerLink="/" (click)="closeMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><h2>Home</h2></a>
+<a routerLink="/projects" (click)="closeMenu()" routerLinkActive="active"><h2>Projects</h2></a>
+<a routerLink="/about" (click)="closeMenu()" routerLinkActive="active"><h2>About</h2></a>
+<a routerLink="/contact" (click)="closeMenu()" routerLinkActive="active"><h2>Contact</h2></a>

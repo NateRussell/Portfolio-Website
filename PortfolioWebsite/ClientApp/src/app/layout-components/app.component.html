@@ -1,6 +1,6 @@
 <div id="page" [@shiftLeft]="sideBar.isOpen">
   <div id="header" [@headerFade]="scrollTop">
-    <div class="width-container"><app-header (openMenuEvent)="sideBar.toggle()"></app-header></div>
+    <div class="width-container"><app-header (toggleMenuEvent)="sideBar.toggle()"></app-header></div>
   </div>
   <div id="body">
     <div class="width-container">

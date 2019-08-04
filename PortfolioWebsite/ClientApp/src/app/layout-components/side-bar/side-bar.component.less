@@ -3,23 +3,22 @@
 :host {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   user-select: none;
   overflow: hidden;
+  max-width: 100%;
 }
 
-#side-navigation-items {
-  flex-direction: column;
+#side-navigation {
   flex: 1 0 auto;
 }
 
 #close-menu {
-  display: flex;
-  justify-content: flex-end;
+  align-self: flex-end;
+  margin: 20px 10px;
 }
 
 #close-menu h2 {
-  margin: 20px 10px;
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -30,6 +29,7 @@
   align-items: center;
   justify-content: space-between;
   flex: 1 0 auto;
+  width: 15em;
 }
 
 #side-connect {

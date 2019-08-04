@@ -17,17 +17,21 @@ import {
   animations: [
     trigger('openClose', [
       state('true',
-        style({ width: '15em' })
+        style({
+          width: '15em',
+        })
       ),
       state('false',
-        style({ width: '0' }),
+        style({
+          width: '0',
+        }),
       ),
       transition('true => false', [
         group([
           query('#side-menu', [
             animate('.4s', style({ opacity: 0 }))
           ]),
-          animate('.4s', style({ width: 0 })),
+          animate('.4s'),
         ])
       ]),
       transition('false => true', [
@@ -35,7 +39,7 @@ import {
           style({ opacity: 0 })
         ]),
         group([
-          animate('.4s', style({ width: '15em' })),
+          animate('.4s'),
           query('#side-menu', [
             animate('.4s', style({ opacity: 1 }))
           ])

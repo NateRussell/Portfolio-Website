@@ -2,9 +2,9 @@
 
 :host {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   user-select: none;
+  overflow: hidden;
 }
 
 img {
@@ -17,6 +17,32 @@ a:hover img {
   animation-duration: .35s;
   animation-fill-mode:forwards;
   animation-timing-function: linear;
+}
+
+#menu {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+#navigation {
+  transform: scaleY(100%);
+  transition: .4s;
+  overflow: hidden;
+}
+
+#toggle-menu {
+  margin: 10px 10px;
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: @pageWidth) {
+  #navigation {
+    transform: scaleY(0);
+    opacity: 0;
+  }
 }
 
 @keyframes iconAnimation {

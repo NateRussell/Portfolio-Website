@@ -1,26 +1,20 @@
 @import '../../../assets/styles/variables.less';
 
-:host{
+:host {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-#top-navigation {
-  transform: scaleY(100%);
-  opacity: 1;
-  transition: .4s;
-  overflow: hidden;
+h2 {
+  color: inherit;
 }
 
-#open-menu {
-  display: inline-block;
-  margin: 10px 10px;
+a {
+  margin: 0 5px;
+  padding: 5px;
 }
 
-@media only screen and (max-width: @pageWidth) {
-  #top-navigation {
-    transform: scaleY(0);
-    opacity: 0;
-  }
+.active {
+  color: white;
 }
