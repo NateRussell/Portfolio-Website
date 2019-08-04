@@ -11,7 +11,7 @@ import { ContactComponent } from './page-components/contact/contact.component';
 import { AboutComponent } from './page-components/about/about.component';
 import { ProjectsComponent } from './page-components/projects/projects.component';
 import { HomeComponent } from './page-components/home/home.component';
-import { ConnectComponent } from './sub-components/connect/connect.component';
+import { ConnectComponent } from './layout-components/connect/connect.component';
 import { SideNavigationComponent } from './layout-components/side-navigation/side-navigation.component';
 import { NavigationItemsComponent } from './layout-components/navigation-items/navigation-items.component';
 import { OverlayComponent } from './utility-components/overlay/overlay.component';

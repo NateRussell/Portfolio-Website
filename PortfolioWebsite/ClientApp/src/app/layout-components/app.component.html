@@ -9,5 +9,6 @@
   </div>
   <app-overlay id="overlay" [show]="sideNavigation.isOpen" (click)="sideNavigation.close()"></app-overlay>
 </div>
+<app-connect [show]="!sideNavigation.isOpen"></app-connect>
 <app-side-navigation #sideNavigation id="side-navigation"></app-side-navigation>
 

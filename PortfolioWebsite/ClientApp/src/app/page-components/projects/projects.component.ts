@@ -23,6 +23,6 @@ export class ProjectsComponent implements OnInit{
 
     setTimeout(() => {
       this.loadAnimations = true;
-    },500);
+    },600);
   }
 }
