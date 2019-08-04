@@ -17,6 +17,7 @@ import { NavigationItemsComponent } from './layout-components/navigation-items/n
 import { OverlayComponent } from './utility-components/overlay/overlay.component';
 import { InnerLayoutComponent } from './layout-components/inner-layout/inner-layout.component';
 import { RouteReuseStrategy } from '@angular/router';
+import { SideConnectComponent } from './layout-components/side-connect/side-connect.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RouteReuseStrategy } from '@angular/router';
     SideBarComponent,
     NavigationItemsComponent,
     OverlayComponent,
-    InnerLayoutComponent
+    InnerLayoutComponent,
+    SideConnectComponent
   ],
   imports: [
     BrowserModule,

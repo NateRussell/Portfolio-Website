@@ -24,21 +24,21 @@ import {
       ),
       transition('true => false', [
         group([
-          query('#side-navigation-items', [
+          query('#side-menu', [
             animate('.4s', style({ opacity: 0 }))
           ]),
           animate('.4s', style({ width: 0 })),
         ])
       ]),
       transition('false => true', [
-        query('#side-navigation-items',[
+        query('#side-menu',[
           style({ opacity: 0 })
         ]),
         group([
           animate('.4s', style({ width: '15em' })),
-          query('#side-navigation-items', [
+          query('#side-menu', [
             animate('.4s', style({ opacity: 1 }))
-          ]),
+          ])
         ])
       ])
     ])
