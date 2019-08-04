@@ -19,7 +19,7 @@ import {
         animate('.2s')
       ]),
       transition('false => true', [
-        animate('.4s .4s')
+        animate('.2s .4s')
       ])
     ])
   ],

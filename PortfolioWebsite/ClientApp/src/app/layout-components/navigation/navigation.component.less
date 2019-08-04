@@ -3,20 +3,22 @@
 :host{
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+}
+
+#top-navigation {
+  transform: scaleY(100%);
+  transition: .4s;
+  overflow: hidden;
 }
 
 #open-menu {
-  display: none;
+  display: inline-block;
   margin: 10px 10px;
 }
 
 @media only screen and (max-width: @pageWidth) {
-  #open-menu {
-    display: none;
-    display: inline-block;
-  }
-
   #top-navigation {
-    display: none;
+    transform: scaleY(0);
   }
 }
