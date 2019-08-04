@@ -1,14 +1,14 @@
-<div id="page" [@shiftLeft]="sideNavigation.isOpen">
+<div id="page" [@shiftLeft]="sideBar.isOpen">
   <div id="header" [@headerFade]="scrollTop">
-    <div class="width-container"><app-header (openMenuEvent)="sideNavigation.toggle()"></app-header></div>
+    <div class="width-container"><app-header (openMenuEvent)="sideBar.toggle()"></app-header></div>
   </div>
   <div id="body">
     <div class="width-container">
       <div id="outlet-wrapper" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"><router-outlet #o="outlet"></router-outlet></div>
     </div>
   </div>
-  <app-overlay id="overlay" [show]="sideNavigation.isOpen" (click)="sideNavigation.close()"></app-overlay>
+  <app-overlay id="overlay" [show]="sideBar.isOpen" (click)="sideBar.close()"></app-overlay>
 </div>
-<app-connect [show]="!sideNavigation.isOpen"></app-connect>
-<app-side-navigation #sideNavigation id="side-navigation"></app-side-navigation>
+<app-connect [show]="!sideBar.isOpen"></app-connect>
+<app-side-bar #sideBar id="side-bar"></app-side-bar>
 

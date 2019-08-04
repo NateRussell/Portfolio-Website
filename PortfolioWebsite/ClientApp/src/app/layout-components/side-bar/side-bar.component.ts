@@ -11,9 +11,9 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'app-side-navigation',
-  templateUrl: './side-navigation.component.html',
-  styleUrls: ['./side-navigation.component.less'],
+  selector: 'app-side-bar',
+  templateUrl: './side-bar.component.html',
+  styleUrls: ['./side-bar.component.less'],
   animations: [
     trigger('openClose', [
       state('true',
@@ -44,7 +44,7 @@ import {
     ])
   ]
 })
-export class SideNavigationComponent implements OnInit {
+export class SideBarComponent implements OnInit {
 
   private isOpen: boolean = false;
 
