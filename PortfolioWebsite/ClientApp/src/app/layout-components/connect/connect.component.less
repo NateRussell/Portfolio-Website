@@ -39,14 +39,15 @@ img {
 
 a:hover {
   transform: translateX(0px);
-  //max-width: @width;
 }
 
 a:hover img {
   opacity: 1;
 }
 
-@media only screen and (max-width: calc(@pageWidth + @width * 1.8)) {
+@transition-width: @pageWidth + @width * 1.8;
+
+@media only screen and (max-width: @transition-width) {
   :host {
     width: 0px;
   }
