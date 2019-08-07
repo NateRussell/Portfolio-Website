@@ -45,7 +45,7 @@ import {
       })
       ),
       transition('true <=> false', [
-        animate('.2s')
+        animate('.4s')
       ])
     ])
   ]
