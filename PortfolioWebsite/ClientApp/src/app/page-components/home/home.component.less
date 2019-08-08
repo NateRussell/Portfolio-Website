@@ -3,18 +3,25 @@
 :host {
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+#inner-layout {
+  flex: 1 1 auto;
+  height: unset;
 }
 
 #intro {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   user-select: none;
+  flex-shrink: 0;
 }
 
 #intro-image {
-  flex-grow: 1;
+  flex: 1 0 auto;
   background: url(../../../assets/img/IntroImage.png);
   background-repeat: no-repeat;
   background-position: center;
