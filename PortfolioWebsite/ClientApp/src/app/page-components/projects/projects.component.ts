@@ -11,8 +11,6 @@ import { shiftInAnimation, fadeInAnimation } from '../content-enter-animations';
 })
 export class ProjectsComponent implements OnInit{
 
-  loadAnimations: boolean = false;
-
   projects: Project[];
 
   constructor(private projectService: ProjectService) { }
@@ -20,9 +18,5 @@ export class ProjectsComponent implements OnInit{
   ngOnInit() {
     this.projectService.index()
       .subscribe(projects => this.projects = projects);
-
-    setTimeout(() => {
-      this.loadAnimations = true;
-    },600);
   }
 }

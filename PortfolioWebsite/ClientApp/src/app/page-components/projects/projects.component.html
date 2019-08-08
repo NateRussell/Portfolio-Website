@@ -1,7 +1,7 @@
-<app-inner-layout>
-  <h2 [@fadeIn]="loadAnimations" >Projects</h2>
+<app-inner-layout #innerLayout>
+  <h2 [@fadeIn]="innerLayout.pageReady" >Projects</h2>
 
-  <ul class="projects" [@shiftIn]="loadAnimations">
+  <ul class="projects" [@shiftIn]="innerLayout.pageReady">
     <li class="project" *ngFor="let project of projects">
       <h3>{{project.title}}</h3>
       <h4>created: {{project.created | date:"MMM yyyy"}}<span *ngIf="project.modified">, modified: {{project.modified | date:"MMM yyyy"}}</span></h4>

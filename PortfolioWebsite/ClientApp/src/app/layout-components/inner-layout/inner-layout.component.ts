@@ -11,7 +11,10 @@ export class InnerLayoutComponent implements OnInit {
   @Input() headerTopAdjustment: boolean = true;
   
   fallbackHeaderAdjustment: string = '4.2em';
-  topPadding: string = '10px';
+
+  topPadding: string = '10px'; //used as trigger to coordinate new page elements to animate in
+
+  private pageReady: boolean = false;
 
   constructor() { }
 
@@ -19,7 +22,14 @@ export class InnerLayoutComponent implements OnInit {
     if (this.headerTopAdjustment) {
       this.adjustTopPadding();
     }
+
+    setTimeout(() => { //wait until old outlet has faded away
+      window.scrollTo({ top: 0 }); //reset scroll bar to top of page
+      this.pageReady = true; //trigger animation for new page elements to animate in
+    }, 600);
   }
+
+
 
   private adjustTopPadding(): void {
 

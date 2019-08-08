@@ -1,9 +1,5 @@
 @import "assets/styles/variables.less";
 
-html {
-  overflow-y: scroll;
-}
-
 html, body {
   margin: 0;
   padding: 0;
@@ -11,11 +7,17 @@ html, body {
   width: 100%;
 }
 
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 body {
   font-family: @bodyTypeface;
   letter-spacing: .05em;
   font-style: normal;
   color: #CCC;
+  background-color: @darkgrey;
 }
 
 a {
@@ -52,11 +54,4 @@ h3 {
 
 h4 {
   font-size: 1.0em;
-}
-
-
-html, body {
-  padding: 0px;
-  margin: 0px;
-  background-color: @darkgrey;
 }

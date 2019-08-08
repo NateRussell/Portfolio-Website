@@ -50,7 +50,7 @@ import {
 })
 export class SideBarComponent implements OnInit {
 
-  private isOpen: boolean = false;
+  isOpen: boolean = false;
 
   @HostBinding('@openClose') get openClose() :boolean {
     return this.isOpen;

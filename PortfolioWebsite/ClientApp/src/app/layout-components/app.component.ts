@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { routeTransitionAnimation } from './route-transition-animation';
 import {
   trigger,
@@ -12,6 +12,7 @@ import {
 
   sequence
 } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -55,12 +56,19 @@ export class AppComponent implements OnInit {
 
   scrollTop: boolean = true;
 
-  constructor(public el: ElementRef) {
+  constructor(private router: Router) {
     
   }
 
   ngOnInit() {
-    this.scrollTop 
+    /*this.router.events.subscribe(() =>
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+
+      })
+    );
+    */
   }
 
   @HostListener('window:scroll', ['$event'])
