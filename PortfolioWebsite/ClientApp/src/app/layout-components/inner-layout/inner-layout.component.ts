@@ -25,7 +25,7 @@ export class InnerLayoutComponent implements OnInit {
 
     setTimeout(() => { //wait until old outlet has faded away
       window.scrollTo({ top: 0 }); //reset scroll bar to top of page
-      this.pageReady = true; //trigger animation for new page elements to animate in
+      this.pageReady = true; //trigger animation new page elements to animate in
     }, 600);
   }
 
