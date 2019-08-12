@@ -1,1 +1,48 @@
+img {
+  max-width: 100%;
 
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.project {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.project-subdivision {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin: 5px 0;
+}
+
+.no-feat {
+  
+}
+
+.featured {
+  grid-area: featured;
+}
+
+.right-feat {
+  grid-template-areas:
+    "a featured featured"
+    "b featured featured"
+}
+
+.left-feat {
+  grid-template-areas:
+    "featured featured a"
+    "featured featured b"
+}
