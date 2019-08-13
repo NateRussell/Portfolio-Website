@@ -31,10 +31,6 @@ img {
   
 }
 
-.featured {
-  grid-area: featured;
-}
-
 .right-feat {
   grid-template-areas:
     "a featured featured"
@@ -45,4 +41,20 @@ img {
   grid-template-areas:
     "featured featured a"
     "featured featured b"
+}
+
+.featured {
+  grid-area: featured;
+}
+
+@media only screen and (max-width: 600px) {
+  .project-subdivision {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .right-feat, .left-feat {
+    grid-template-areas:
+      "featured featured"
+      "featured featured"
+  }
 }
