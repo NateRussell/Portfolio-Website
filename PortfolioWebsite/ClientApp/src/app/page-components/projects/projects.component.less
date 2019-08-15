@@ -2,13 +2,14 @@
 
 img {
   max-width: 100%;
+  
 }
 
 .title {
   position: absolute;
   bottom: 50px;
   right: 50px;
-  height: 3em;
+  min-height: 3em;
   transform: translateY(50%) translateX(50%) rotate(-45deg);
   width: 100px;
   text-align: center;
@@ -17,10 +18,10 @@ img {
   align-items: center;
   justify-content: center;
   z-index: 3;
-  padding: 0 50%;
-  color: @white;
-  background-color: rgba(125,125,125,.7);
+  padding: 2px 50%;
   user-select: none;
+  overflow: hidden;
+  background-color: rgba(136,136,136,.7);
 }
 
 .projects {
@@ -75,7 +76,7 @@ img {
 
   .title
   {
-    font-size: 1em;
+    font-size: .8em;
   }
 
   .right-feat, .left-feat {

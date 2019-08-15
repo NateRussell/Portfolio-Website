@@ -38,11 +38,13 @@ import { Router } from '@angular/router';
     ]),
     trigger('headerFade', [
       state('true', style({
-        backgroundColor: 'rgba(0, 0, 0, 0)'
+        backgroundColor: 'rgba(24, 24, 24, 0)',
+        borderBottom: '2px solid rgba(24, 24, 24, 0)'
       })
       ),
       state('false', style({
-        backgroundColor: 'rgba(0,0,0, .8)'
+        backgroundColor: 'rgba(24, 24, 24, .95)',
+        borderBottom: '2px solid  #282828'
       })
       ),
       transition('true <=> false', [
