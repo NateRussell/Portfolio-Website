@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../_services/project.service';
 import { Project } from '../../_models/project';
-import { shiftInAnimation, fadeInAnimation } from '../content-enter-animations';
+import { scaleInAnimation, fadeInAnimation } from '../content-enter-animations';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.less'],
-  animations: [ shiftInAnimation, fadeInAnimation ]
+  animations: [ scaleInAnimation, fadeInAnimation ]
 })
 export class ProjectsComponent implements OnInit{
 

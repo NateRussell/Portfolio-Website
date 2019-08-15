@@ -13,7 +13,7 @@ import {
   sequence
 } from '@angular/animations';
 
-export const shiftInAnimation = trigger('shiftIn', [
+export const scaleInAnimation = trigger('scaleIn', [
   state('false', style({
     opacity: 0
   })),
@@ -25,12 +25,12 @@ export const shiftInAnimation = trigger('shiftIn', [
     query('.project', [
       style({
         opacity: 0,
-        transform: 'translateY(20px)'
+        transform: 'scale(.8)'
       }),
       stagger('.2s', [
         animate('.4s', style({
           opacity: 1,
-          transform: 'translateY(0px)'
+          transform: 'scale(1)'
         }))
       ])
     ])
