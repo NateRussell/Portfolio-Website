@@ -25,7 +25,7 @@ export const scaleInAnimation = trigger('scaleIn', [
     query('.project', [
       style({
         opacity: 0,
-        transform: 'scale(.8)'
+        transform: 'scale(.85)'
       }),
       stagger('.2s', [
         animate('.4s', style({

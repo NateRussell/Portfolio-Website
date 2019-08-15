@@ -34,12 +34,13 @@
   overflow: hidden;
 }
 
-#intro-image h3 {
-  animation: scrollAnimation 8s 4s;
+#scroll-message {
+  animation: fadeInAnimation 8s 4s;
   animation-fill-mode: forwards;
   opacity: 0;
   text-align: center;
   margin: 10px;
+  transition: .4s;
 }
 
 #action-bar {
@@ -59,7 +60,13 @@
   margin: 0 20px;
 }
 
-@keyframes scrollAnimation {
+@media only screen and (max-width: 600px) {
+  #scroll-message {
+    font-size: 1em;
+  }
+}
+
+@keyframes fadeInAnimation {
   from {
     opacity: 0;
   }
