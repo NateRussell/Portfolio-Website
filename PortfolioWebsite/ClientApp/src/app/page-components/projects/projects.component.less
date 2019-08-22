@@ -2,7 +2,12 @@
 
 img {
   max-width: 100%;
-  
+  transform: scale(1.01);
+  transition: .8s;
+}
+
+.project:hover img {
+  transform: scale(1.1);
 }
 
 .title {
@@ -21,7 +26,18 @@ img {
   padding: 2px 50%;
   user-select: none;
   overflow: hidden;
-  background-color: rgba(136,136,136,.7);
+  background-color: @darkgrey;
+  border: solid 2px @accentColor;
+  filter: drop-shadow(5px 5px 5px #000); //also prevents text from deforming during image transform transition
+}
+
+.project h3 {
+  color: @accentColor;
+  transition: .4s;
+}
+
+.project:hover h3 {
+  color: @white;
 }
 
 .projects {
