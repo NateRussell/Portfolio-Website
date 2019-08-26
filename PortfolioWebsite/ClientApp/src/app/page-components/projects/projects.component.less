@@ -83,6 +83,15 @@ img {
 
 .featured {
   grid-area: featured;
+  border: 2px solid @featuredColor;
+}
+
+.featured .title {
+  border: 2px solid @featuredColor;
+}
+
+.featured h3 {
+  color: #970;
 }
 
 @media only screen and (max-width: 600px) {
@@ -90,14 +99,11 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
-  .title
-  {
+  .title {
     font-size: .8em;
   }
 
   .right-feat, .left-feat {
-    grid-template-areas:
-      "featured featured"
-      "featured featured"
+    grid-template-areas: "featured featured" "featured featured"
   }
 }
