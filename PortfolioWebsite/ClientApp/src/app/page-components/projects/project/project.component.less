@@ -1,0 +1,74 @@
+@import '../../../../assets/styles/variables.less';
+
+:host {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+:host.featured {
+  border: 2px solid @featuredColor;
+}
+
+:host.featured .title {
+  border: 2px solid @featuredColor;
+}
+
+:host.featured h3 {
+  color: #970;
+}
+
+.description, .date {
+  display: none;
+}
+
+h3 {
+  color: @accentColor;
+  transition: .4s;
+}
+
+:host:hover h3 {
+  color: @white;
+}
+
+img {
+  max-width: 100%;
+  transform: scale(1.01);
+  transition: .8s;
+}
+
+:host:hover img {
+  transform: scale(1.1);
+}
+
+.title {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  min-height: 3em;
+  transform: translateY(50%) translateX(50%) rotate(-45deg);
+  width: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  padding: 2px 50%;
+  user-select: none;
+  overflow: hidden;
+  background-color: @darkgrey;
+  border: solid 2px @accentColor;
+  filter: drop-shadow(5px 5px 5px #000); //also prevents text from deforming during image transform transition
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: .8em;
+  }
+}
