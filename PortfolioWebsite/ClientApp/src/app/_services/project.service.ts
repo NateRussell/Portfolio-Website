@@ -13,4 +13,8 @@ export class ProjectService {
   index(): Observable<Project[]> {
     return of(PROJECTS);
   }
+
+  latest(count: number): Observable<Project[]> {
+    return of(PROJECTS.slice(0, count));
+  }
 }

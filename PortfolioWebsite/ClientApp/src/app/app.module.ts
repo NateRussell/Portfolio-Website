@@ -19,6 +19,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { SideConnectComponent } from './layout-components/side-connect/side-connect.component';
 import { SideNavigationComponent } from './layout-components/side-navigation/side-navigation.component';
 import { ProjectComponent } from './page-components/projects/project/project.component';
+import { ProjectComponent as HomeProjectComponent } from './page-components/home/project/project.component' ;
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProjectComponent } from './page-components/projects/project/project.com
     InnerLayoutComponent,
     SideConnectComponent,
     SideNavigationComponent,
-    ProjectComponent
+    ProjectComponent,
+    HomeProjectComponent
   ],
   imports: [
     BrowserModule,

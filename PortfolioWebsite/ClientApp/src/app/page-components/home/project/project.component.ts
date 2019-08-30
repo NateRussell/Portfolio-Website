@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Project } from 'src/app/_models/project';
 
 @Component({
-  selector: 'projects-project',
+  selector: 'home-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.less']
 })

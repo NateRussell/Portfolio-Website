@@ -3,7 +3,7 @@
 
   <div class="projects" [@scaleIn]="innerLayout.pageReady">
     <div class="project-subdivision" *ngFor="let projectSubdivision of projects; let i = index" [ngClass]="(i==0 && projectSubdivision.length > 0 && !projectSubdivision[0].featured)?'no-feat':(i % 2 == 0)?'right-feat':'left-feat'">
-      <app-project class="project" *ngFor="let project of projectSubdivision" [class.featured]="project.featured" [@project]="project"></app-project>
+      <projects-project class="project" *ngFor="let project of projectSubdivision" [class.featured]="project.featured" [@project]="project"></projects-project>
     </div>
   </div>
 </app-inner-layout>
