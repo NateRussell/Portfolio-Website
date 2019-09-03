@@ -1,10 +1,7 @@
 <div id="intro" [@fadeIn]="innerLayout.pageReady">
-  <div id="intro-image">
-  <h3 id="scroll-message">(Scroll down or click the arrows below to continue)</h3>
-  </div>
-  <a href="#inner-layout"><div id="action-bar"><span>&#x21E9;</span><span>&#x21E9;</span><span>&#x21E9;</span></div></a>
+  <div id="scroll-button" (click)="scrollToContent()">&#8681;</div>
 </div>
-<app-inner-layout id="inner-layout" #innerLayout [headerTopAdjustment]="false">
+<app-inner-layout id="inner-layout" #innerLayout>
   <h3>Welcome to naterussell.com. This website is currently under construction.</h3>
   <h2>Latest Projects</h2>
   <div class="projects" *ngFor="let project of projects">

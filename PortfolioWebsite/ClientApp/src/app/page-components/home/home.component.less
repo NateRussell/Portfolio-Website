@@ -6,6 +6,48 @@
   height: 100%;
 }
 
+#intro {
+  //position: relative;
+  height: 100%;
+  flex-shrink: 0;
+  display:inline;
+  user-select: none;
+  background: url(../../../assets/img/IntroImage.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#scroll-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5em;
+  width: 4em;
+  overflow: hidden;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: -8px;
+  cursor: pointer;
+  font-size: 2.5em;
+  color: @accentColor;
+  border: 2px solid @accentColor;
+  border-radius: 2em;
+  opacity: 0;
+  animation: fadeInAnimation 3s 4s;
+  animation-fill-mode: forwards;
+  transition: .4s;
+}
+
+#scroll-button:hover {
+  color: @white;
+  border: 2px solid @white;
+  opacity: 1;
+}
+
 #inner-layout {
   flex: 1 1 auto;
   height: unset;
@@ -13,66 +55,12 @@
 
 #inner-layout h3 {
   text-align: center;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   padding: 10px;
-  border-bottom: solid 1px @accentColor;
+  font-style:italic;
 }
 
-#intro {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  user-select: none;
-  flex-shrink: 0;
-}
 
-#intro-image {
-  flex: 1 0 auto;
-  background: url(../../../assets/img/IntroImage.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  overflow: hidden;
-}
-
-#scroll-message {
-  animation: fadeInAnimation 8s 4s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  text-align: center;
-  margin: 10px;
-  transition: .4s;
-}
-
-#action-bar {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: 100;
-  font-size: 30px;
-  border-top: solid 1px @grey;
-  border-bottom: solid 1px @grey;
-}
-
-#action-bar span {
-  margin: 0 20px;
-}
-
-@media only screen and (max-width: 600px) {
-  #scroll-message {
-    font-size: 1em;
-  }
-}
 
 @keyframes fadeInAnimation {
   from {

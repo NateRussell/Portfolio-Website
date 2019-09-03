@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.projectService.latest(3)
       .subscribe(projects => this.projects = projects);
+
+    
   }
 
   index(): Observable<Project[]> {
@@ -29,6 +31,14 @@ export class HomeComponent implements OnInit {
   get(id: number): Observable<Project> {
 
     return null;
+  }
+
+  scrollToContent(): void {
+    let contentElement: HTMLElement = document.getElementById("inner-layout"); //get the inner layout element
+    if (contentElement != null) { //if the inner layout element exists
+      contentElement.scrollIntoView({ behavior: "smooth" }); //scroll to the inner layout component
+    }
+    
   }
 
 }
