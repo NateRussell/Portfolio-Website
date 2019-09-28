@@ -1,27 +1,23 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { fadeInAnimation } from '../../page-components/content-enter-animations';
 
 @Component({
   selector: 'app-inner-layout',
   templateUrl: './inner-layout.component.html',
-  styleUrls: ['./inner-layout.component.less']
+  styleUrls: ['./inner-layout.component.less'],
+  animations: [fadeInAnimation]
 })
 
 export class InnerLayoutComponent implements OnInit {
 
-  @Input() headerTopAdjustment: boolean = true;
-  
-  fallbackHeaderAdjustment: string = '4.2em';
+  public pageReady: boolean = false; //used as trigger to coordinate new page elements to enter the page
+  private topPadding: string = '10px';
 
-  topPadding: string = '10px'; //used as trigger to coordinate new page elements to animate in
-
-  private pageReady: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
-    if (this.headerTopAdjustment) {
-      this.adjustTopPadding();
-    }
+    this.adjustTopPadding();
 
     setTimeout(() => { //wait until old outlet has faded away
       window.scrollTo({ top: 0 }); //reset scroll bar to top of page
@@ -33,7 +29,7 @@ export class InnerLayoutComponent implements OnInit {
 
   private adjustTopPadding(): void {
 
-    let adjustmentHeight: string = this.fallbackHeaderAdjustment; //default to the fallback adjustment value
+    let adjustmentHeight: string = '4.2em'; //fallback adjustment value
 
     let headerElement: HTMLElement = document.getElementById('header'); //get header element
     if (headerElement != null) { //if header element exists
