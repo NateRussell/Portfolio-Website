@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { fadeInAnimation } from '../../page-components/content-enter-animations';
 
 @Component({
@@ -13,6 +13,7 @@ export class InnerLayoutComponent implements OnInit {
   public pageReady: boolean = false; //used as trigger to coordinate new page elements to enter the page
   private topPadding: string = '10px';
 
+  @HostBinding('style.opacity') private hostOpacity: string = '0';
 
   constructor() { }
 
@@ -21,6 +22,7 @@ export class InnerLayoutComponent implements OnInit {
 
     setTimeout(() => { //wait until old outlet has faded away
       window.scrollTo({ top: 0 }); //reset scroll bar to top of page
+      this.hostOpacity = '1';
       this.pageReady = true; //trigger animation new page elements to animate in
     }, 600);
   }
