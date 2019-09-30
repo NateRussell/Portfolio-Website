@@ -19,7 +19,8 @@ import { RouteReuseStrategy } from '@angular/router';
 import { SideConnectComponent } from './layout-components/side-connect/side-connect.component';
 import { SideNavigationComponent } from './layout-components/side-navigation/side-navigation.component';
 import { ProjectComponent } from './page-components/projects/project/project.component';
-import { ProjectComponent as HomeProjectComponent } from './page-components/home/project/project.component' ;
+import { ProjectComponent as HomeProjectComponent } from './page-components/home/project/project.component';
+import { LoadBarComponent } from './layout-components/load-bar/load-bar.component' ;
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProjectComponent as HomeProjectComponent } from './page-components/home
     SideConnectComponent,
     SideNavigationComponent,
     ProjectComponent,
-    HomeProjectComponent
+    HomeProjectComponent,
+    LoadBarComponent
   ],
   imports: [
     BrowserModule,

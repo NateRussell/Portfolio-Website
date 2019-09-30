@@ -13,23 +13,36 @@ export class InnerLayoutComponent implements OnInit {
 
   public pageReady: boolean = false; //used as trigger to coordinate new page elements to enter the page
   private topPadding: string = '10px';
+  imagesLoaded: boolean = false;
+  loadBarReady: boolean = false;
 
-  @HostBinding('style.opacity') public hostOpacity: string = '0';
+  //@HostBinding('style.opacity') public hostOpacity: string = '0';
+  contentElement: HTMLElement = null;
 
   constructor() { }
 
   ngOnInit() {
     this.adjustTopPadding();
 
+    this.contentElement = document.getElementById('content');
+    if (this.contentElement != null) {
+      this.contentElement.style.opacity = '0';
+    }
+
     const DELAY: number = 600;
     setTimeout(() => { //wait until old outlet has faded away
       this.waitForImages(() => this.setPage(this));
+      this.loadBarReady = true;
     }, DELAY);
   }
 
   private setPage(component: InnerLayoutComponent): void {
     window.scrollTo({ top: 0 }); //reset scroll bar to top of page
-    component.hostOpacity = '1';
+
+    if (this.contentElement != null) {
+      this.contentElement.style.opacity = '1';
+    }
+
     component.pageReady = true; //trigger animation new page elements to animate in
   }
 
@@ -63,7 +76,9 @@ export class InnerLayoutComponent implements OnInit {
       });
       imageLoadPromises.push(promise);
     }
+
     Promise.all(imageLoadPromises).then(() => { //once all images promises have resolved due to loading or failing to load
+      this.imagesLoaded = true;
       callback(); //trigger the callback
     })
   }
