@@ -12,7 +12,6 @@ import {
 
   sequence
 } from '@angular/animations';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -58,19 +57,11 @@ export class AppComponent implements OnInit {
 
   scrollTop: boolean = true;
 
-  constructor(private router: Router) {
-    
+  constructor() {
   }
 
   ngOnInit() {
-    /*this.router.events.subscribe(() =>
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-
-      })
-    );
-    */
+    
   }
 
   @HostListener('window:scroll', ['$event'])

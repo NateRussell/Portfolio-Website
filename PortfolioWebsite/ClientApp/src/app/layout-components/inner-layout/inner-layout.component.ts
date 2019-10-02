@@ -68,10 +68,15 @@ export class InnerLayoutComponent implements OnInit {
 
     for (let i = 0; i < images.length; i++) { //for each image
       let promise: Promise<boolean> = new Promise<boolean>((resolve) => { //create a new promise
-        images.item(i).onload = () => resolve(true); //resolve the promise when the image loads
-        images.item(i).onerror = () => resolve(false); //resolve promise when the image fails to load
-        if (images.item(i).complete) { //resolve promise if image has already loaded
+        if (images.item(i).src.endsWith('LoadBar.gif')) { //if the image is the load bar, resolve it so that you don't run into situations where the user is wating to load only the load bar.
           resolve(true);
+        }
+        else {
+          images.item(i).onload = () => resolve(true); //resolve the promise when the image loads
+          images.item(i).onerror = () => resolve(false); //resolve promise when the image fails to load
+          if (images.item(i).complete) { //resolve promise if image has already loaded
+            resolve(true);
+          }
         }
       });
       imageLoadPromises.push(promise);
