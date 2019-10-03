@@ -1,5 +1,5 @@
-<app-inner-layout>
-  <p>
+<app-inner-layout #innerLayout>
+  <p [@rightSlideIn]="innerLayout.pageReady">
     about works!
   </p>
 </app-inner-layout>

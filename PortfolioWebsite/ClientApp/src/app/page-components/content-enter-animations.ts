@@ -48,3 +48,31 @@ export const fadeInAnimation = trigger('fadeIn', [
         animate('.4s')
   ])
 ]);
+
+export const rightSlideInAnimation = trigger('rightSlideIn', [
+  state('false', style({
+    opacity: 0,
+    transform: "translateX(25px)"
+  })),
+  state('true', style({
+    opacity: 1,
+    transform: "translateX(0)"
+  })),
+  transition('false => true', [
+    animate('.8s')
+  ])
+]);
+
+export const leftSlideInAnimation = trigger('leftSlideIn', [
+  state('false', style({
+    opacity: 0,
+    transform: "translateX(-25px)"
+  })),
+  state('true', style({
+    opacity: 1,
+    transform: "translateX(0)"
+  })),
+  transition('false => true', [
+    animate('.8s')
+  ])
+]);
