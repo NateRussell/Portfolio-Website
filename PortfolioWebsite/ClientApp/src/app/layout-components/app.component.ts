@@ -12,6 +12,7 @@ import {
 
   sequence
 } from '@angular/animations';
+import { ViewportService } from '../_services/viewport.service';
 
 @Component({
   selector: 'app-root',
@@ -57,19 +58,10 @@ export class AppComponent implements OnInit {
 
   scrollTop: boolean = true;
 
-  constructor() {
+  constructor(private viewportService: ViewportService) {
   }
 
   ngOnInit() {
     
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    if ((window.scrollY || document.documentElement.scrollTop) <= 0) {
-      this.scrollTop = true;
-    } else {
-      this.scrollTop = false;
-    }
   }
 }

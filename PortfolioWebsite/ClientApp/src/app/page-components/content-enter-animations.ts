@@ -17,7 +17,7 @@ export const scaleInAnimation = trigger('scaleIn', [
   state('false', style({
     opacity: 0
   })),
-  transition('false => true', [
+  transition('false <=> true', [
     style({
       opacity: 1
       
@@ -44,7 +44,7 @@ export const fadeInAnimation = trigger('fadeIn', [
   state('true', style({
     opacity: 1
   })),
-  transition('false => true', [
+  transition('false <=> true', [
         animate('.4s')
   ])
 ]);
@@ -58,7 +58,7 @@ export const rightSlideInAnimation = trigger('rightSlideIn', [
     opacity: 1,
     transform: "translateX(0)"
   })),
-  transition('false => true', [
+  transition('false <=> true', [
     animate('.8s')
   ])
 ]);
@@ -72,7 +72,7 @@ export const leftSlideInAnimation = trigger('leftSlideIn', [
     opacity: 1,
     transform: "translateX(0)"
   })),
-  transition('false => true', [
+  transition('false <=> true', [
     animate('.8s')
   ])
 ]);

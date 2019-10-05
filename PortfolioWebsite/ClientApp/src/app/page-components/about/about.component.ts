@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { rightSlideInAnimation } from '../content-enter-animations';
+import { ViewportService } from 'src/app/_services/viewport.service';
 
 @Component({
   selector: 'app-about',
@@ -9,7 +10,7 @@ import { rightSlideInAnimation } from '../content-enter-animations';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private viewportService: ViewportService) { }
 
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
 <div id="page" [@shiftLeft]="sideBar.isOpen">
-  <div id="header" [@headerFade]="scrollTop">
+  <div id="header" [@headerFade]="viewportService.scrolledToTop">
     <div class="width-container"><app-header (toggleMenuEvent)="sideBar.toggle()"></app-header></div>
   </div>
   <div id="body">
