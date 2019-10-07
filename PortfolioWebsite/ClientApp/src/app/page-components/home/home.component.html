@@ -1,4 +1,4 @@
-<div id="intro" [@fadeIn]="innerLayout.pageReady">
+<div id="intro" [@fadeIn]="innerLayout.pageReady || false">
   <div id="scroll-button" (click)="scrollToContent()">&#8681;</div>
 </div>
 <app-inner-layout id="inner-layout" #innerLayout>
