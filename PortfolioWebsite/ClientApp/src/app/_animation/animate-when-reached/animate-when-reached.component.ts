@@ -12,7 +12,7 @@ export class AnimateWhenReachedComponent implements OnInit {
 
   private _elementReached: boolean = false;
   private _ready: boolean = false;
-  @ViewChild('content') _contentElement: ElementRef;
+  @ViewChild('content', { static: true }) _contentElement: ElementRef;
 
   @HostListener('window:scroll', ['$event']) onScroll(event) {
     this.checkVisible();
