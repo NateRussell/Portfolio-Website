@@ -20,7 +20,8 @@ import { SideConnectComponent } from './layout-components/side-connect/side-conn
 import { SideNavigationComponent } from './layout-components/side-navigation/side-navigation.component';
 import { ProjectComponent } from './page-components/projects/project/project.component';
 import { ProjectComponent as HomeProjectComponent } from './page-components/home/project/project.component';
-import { LoadBarComponent } from './layout-components/load-bar/load-bar.component' ;
+import { LoadBarComponent } from './layout-components/load-bar/load-bar.component';
+import { AnimateWhenReachedComponent } from './_animation/animate-when-reached/animate-when-reached.component' ;
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LoadBarComponent } from './layout-components/load-bar/load-bar.componen
     SideNavigationComponent,
     ProjectComponent,
     HomeProjectComponent,
-    LoadBarComponent
+    LoadBarComponent,
+    AnimateWhenReachedComponent
   ],
   imports: [
     BrowserModule,

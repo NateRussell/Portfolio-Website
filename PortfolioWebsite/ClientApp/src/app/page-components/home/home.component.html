@@ -1,7 +1,7 @@
-<div id="intro" [@fadeIn]="innerLayout.pageReady || false">
+<div id="intro" [@fadeIn]="viewportService.pageReady || false">
   <div id="scroll-button" (click)="scrollToContent()">&#8681;</div>
 </div>
-<app-inner-layout id="inner-layout" #innerLayout>
+<app-inner-layout id="inner-layout">
   <h3>Welcome to naterussell.com. This website is currently under construction.</h3>
   <h2>Latest Projects</h2>
   <div class="projects" *ngFor="let project of projects">

@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { routeTransitionAnimation } from './route-transition-animation';
+import { routeTransitionAnimation } from '../_animation/route-transition-animation';
 import {
   trigger,
   style,
@@ -54,11 +54,12 @@ import { ViewportService } from '../_services/viewport.service';
   ]
 })
 export class AppComponent implements OnInit {
-  title = 'ClientApp';
 
-  scrollTop: boolean = true;
 
   constructor(private viewportService: ViewportService) {
+    viewportService.onPageReady.subscribe(() => {
+      viewportService.scrollToTop();
+    });
   }
 
   ngOnInit() {

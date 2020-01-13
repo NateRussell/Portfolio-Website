@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { leftSlideInAnimation } from '../content-enter-animations';
+import { leftSlideInAnimation } from '../../_animation/content-enter-animations';
+import { ViewportService } from 'src/app/_services/viewport.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,7 @@ import { leftSlideInAnimation } from '../content-enter-animations';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private viewportService: ViewportService) { }
 
   ngOnInit() {
   }

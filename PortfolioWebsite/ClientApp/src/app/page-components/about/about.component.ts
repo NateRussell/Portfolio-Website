@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { rightSlideInAnimation } from '../content-enter-animations';
+import { rightSlideInAnimation } from '../../_animation/content-enter-animations';
 import { ViewportService } from 'src/app/_services/viewport.service';
 
 @Component({

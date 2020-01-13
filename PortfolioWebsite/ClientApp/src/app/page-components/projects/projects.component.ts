@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../_services/project.service';
 import { Project } from '../../_models/project';
-import { scaleInAnimation, fadeInAnimation } from '../content-enter-animations';
+import { scaleInAnimation, fadeInAnimation } from '../../_animation/content-enter-animations';
+import { ViewportService } from 'src/app/_services/viewport.service';
 
 @Component({
   selector: 'app-projects',
@@ -13,7 +14,7 @@ export class ProjectsComponent implements OnInit{
 
   projects: Project[][];
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, private viewportService: ViewportService) { }
 
   ngOnInit() {
     this.projectService.index()

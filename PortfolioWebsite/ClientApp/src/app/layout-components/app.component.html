@@ -9,4 +9,5 @@
 </div>
 <app-connect [show]="!sideBar.isOpen"></app-connect>
 <app-side-bar #sideBar id="side-bar"></app-side-bar>
+<app-load-bar [class.removed]="viewportService.pageReady || !viewportService.pageLoading"></app-load-bar>
 

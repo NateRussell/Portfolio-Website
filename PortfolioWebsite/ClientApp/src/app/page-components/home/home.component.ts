@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Project } from '../../_models/project';
-import { fadeInAnimation } from '../content-enter-animations';
+import { fadeInAnimation } from '../../_animation/content-enter-animations';
 import { ProjectService } from 'src/app/_services/project.service';
+import { ViewportService } from 'src/app/_services/viewport.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   projects: Project[];
 
-  constructor(private projectService: ProjectService) { }
+  constructor(private projectService: ProjectService, private viewportService: ViewportService) { }
 
   ngOnInit() {
     this.projectService.latest(3)
