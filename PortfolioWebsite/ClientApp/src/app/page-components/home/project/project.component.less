@@ -1,3 +1,64 @@
+@import "../../../../assets/styles/variables.less";
+
+:host {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 150px auto auto;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  padding: 10px;
+
+  margin: 5px 0;
+  grid-template-areas: "thumb title date" "thumb description description";
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  transition: .4s;
+  cursor: pointer;
+}
+
+:host:hover {
+  transform: translate(-3px, -3px);
+  background-color: @grey;
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 5px #000);
+}
+
 img {
-  width: 200px;
+  width: 100%;
+  justify-self: center;
+  border-radius: 10px;
+}
+
+.thumb {
+  grid-area: thumb;
+}
+
+.date {
+  grid-area: date;
+  justify-self: end;
+}
+
+.title {
+  grid-area: title;
+}
+
+.description {
+  grid-area: description;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+  :host {
+    grid-template-columns: 150px auto;
+    grid-template-rows: auto;
+    grid-template-areas:  "thumb title"
+                          "thumb date"
+                          "description description";
+  }
+
+  .title, .date{
+    justify-self: center;
+    text-align: center;
+  }
 }
