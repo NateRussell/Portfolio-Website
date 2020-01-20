@@ -1,6 +1,5 @@
 <app-inner-layout>
   <!--h2 [@fadeIn]="innerLayout.pageReady" >Projects</h2-->
-
   <div class="projects" [@scaleIn]="viewportService.pageReady">
     <div class="project-subdivision" *ngFor="let projectSubdivision of projects; let i = index" [ngClass]="(i==0 && projectSubdivision.length > 0 && !projectSubdivision[0].featured)?'no-feat':(i % 2 == 0)?'right-feat':'left-feat'">
       <projects-project class="project" *ngFor="let project of projectSubdivision" [class.featured]="project.featured" [@project]="project"></projects-project>

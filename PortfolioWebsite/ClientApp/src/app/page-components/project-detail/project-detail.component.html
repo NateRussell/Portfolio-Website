@@ -1,0 +1,12 @@
+<app-inner-layout>
+  <div *ngIf="project" class="projectNav">
+    <a routerLink="/projects/{{_previousProject.id}}" class="button previous" *ngIf="_previousProject">&#8678;</a>
+    <a routerLink="/projects" class="button project"><div class="projects_icon"><div class="projectsIconRow">&#9632;&#9632;&#9632;</div><div class="projectsIconRow">&#9632;&#9632;&#9632;</div><div class="projectsIconRow">&#9632;&#9632;&#9632;</div></div></a>
+    <a routerLink="/projects/{{_nextProject.id}}" class="button next" *ngIf="_nextProject">&#8680;</a>
+  </div>
+
+  <h1>{{project.title}}</h1>
+  <h4 class="date">created: {{project.created | date:"MMM yyyy"}}<span *ngIf="project.modified">, modified: {{project.modified | date:"MMM yyyy"}}</span></h4>
+  <p>{{project.description}}</p>
+  <img class="thumb" *ngIf="project.thumb" src="{{project.thumb}}" />
+</app-inner-layout>

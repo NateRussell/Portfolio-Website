@@ -1,4 +1,6 @@
-<div class="title"><h3>{{project.title}}</h3></div>
-<h4 class="date">created: {{project.created | date:"MMM yyyy"}}<span *ngIf="project.modified">, modified: {{project.modified | date:"MMM yyyy"}}</span></h4>
-<img class="thumb" *ngIf="project.thumb" src="{{project.thumb}}" />
-<p class="description">{{project.description}}</p>
+<a routerLink="/projects/{{project.id}}">
+  <div class="title"><h3>{{project.title}}</h3></div>
+  <h4 class="date">created: {{project.created | date:"MMM yyyy"}}<span *ngIf="project.modified">, modified: {{project.modified | date:"MMM yyyy"}}</span></h4>
+  <img class="thumb" *ngIf="project.thumb" src="{{project.thumb}}" />
+  <p class="description">{{project.description}}</p>
+ </a>

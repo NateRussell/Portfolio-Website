@@ -1,6 +1,6 @@
 @import '../../../../assets/styles/variables.less';
 
-:host {
+a {
   position: relative;
   margin: 0;
   padding: 0;
@@ -14,16 +14,16 @@
 }
 
 /*
-:host.featured {
+a.featured {
   border: 2px solid @featuredColor;
 }
 */
 
-:host.featured .title {
+a.featured .title {
   border: 2px solid @featuredColor;
 }
 
-:host.featured h3 {
+a.featured h3 {
   color: #970;
 }
 
@@ -36,7 +36,7 @@ h3 {
   transition: .4s;
 }
 
-:host:hover h3 {
+a:hover h3 {
   color: @white;
 }
 
@@ -46,7 +46,7 @@ img {
   transition: .8s;
 }
 
-:host:hover img {
+a:hover img {
   transform: scale(1.1);
 }
 
