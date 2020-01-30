@@ -22,6 +22,9 @@ export class InnerLayoutComponent implements OnInit {
     this.adjustTopPadding();
   }
 
+  @Input() pageReady: boolean = false;
+  @Input() pageReadyManualOverride: boolean = false;
+
   private adjustTopPadding(): void {
 
     let adjustmentHeight: string = '4.2em'; //fallback adjustment value

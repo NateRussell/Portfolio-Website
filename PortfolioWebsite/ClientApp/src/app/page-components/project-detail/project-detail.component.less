@@ -7,30 +7,79 @@
 }
 
 .button {
-  font-size: 4em;
-}
-
-.projects_icon {
-  margin: 0;
-  padding: 2px 4px 6px 4px;
+  user-select: none;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin: 0 10px;
   display: inline-flex;
-  flex-direction: column;
-  //background-color: @grey;
-  border: 2px solid inherit;
-  border-radius: 5px;
-  color: @accentColor;
-  border: 3px solid @accentColor;
+  align-items: center;
+  justify-content: center;
+}
+
+.button a {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  
+  font-size: 4em;
+  background-color: @darkgrey;
+  border: 1px dotted @grey;
+  color: inherit;
+}
+
+.button img {
+  height: 125%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   transition: .4s;
+  filter: opacity(25%);
 }
 
-.projects_icon:hover {
+.next a {
+  border-radius: 10px 51px 51px 10px;
+}
+
+.previous a {
+  border-radius: 51px 10px 10px 51px;
+}
+
+.project a {
+  
+}
+
+.button .text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -54%);
+  z-index: 1;
+  color: @lightgrey;
+  transition: .4s;
+  margin: 0;
+  padding: 0;
+}
+
+.project .text {
+  transform: translate(-50%, -50%);
+}
+
+.button a:hover {
+  transform: translate(-0px, -3px);
+  background-color: @grey;
+  filter: drop-shadow(0px 3px 3px #000);
+}
+
+.button a:hover .text {
   color: @white;
-  border-color: @white;
 }
 
-.projectsIconRow {
-  letter-spacing: 0em;
-  line-height: .65em;
-  font-size: .25em;
+.button a:hover img {
+  filter: opacity(75%);
 }
 

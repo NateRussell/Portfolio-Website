@@ -1,12 +1,14 @@
-<app-inner-layout>
-  <div *ngIf="project" class="projectNav">
-    <a routerLink="/projects/{{_previousProject.id}}" class="button previous" *ngIf="_previousProject">&#8678;</a>
-    <a routerLink="/projects" class="button project"><div class="projects_icon"><div class="projectsIconRow">&#9632;&#9632;&#9632;</div><div class="projectsIconRow">&#9632;&#9632;&#9632;</div><div class="projectsIconRow">&#9632;&#9632;&#9632;</div></div></a>
-    <a routerLink="/projects/{{_nextProject.id}}" class="button next" *ngIf="_nextProject">&#8680;</a>
+<app-inner-layout [@pageReady]="_pageReady" [@pageReadyManualOverride]="true">
+  <div *ngIf="project" class="projectNav" [@fadeIn]="_pageReady">
+    <div class="button previous"><a (click)="previous()"  *ngIf="_previousProject"><img *ngIf="_previousProject.thumb" src="{{_previousProject.thumb}}" [class.hidden]="_exitLeft || _exitRight" /><div class="text">&#8678;</div></a></div>
+    <div class="button project"><a routerLink="/projects"><div class="text">&#9783;</div></a></div>
+    <div class="button next"><a (click)="next()" *ngIf="_nextProject"><img *ngIf="_nextProject.thumb" src="{{_nextProject.thumb}}" [class.hidden]="_exitLeft || _exitRight" /><div class="text">&#8680;</div></a></div>
   </div>
 
-  <h1>{{project.title}}</h1>
-  <h4 class="date">created: {{project.created | date:"MMM yyyy"}}<span *ngIf="project.modified">, modified: {{project.modified | date:"MMM yyyy"}}</span></h4>
-  <p>{{project.description}}</p>
-  <img class="thumb" *ngIf="project.thumb" src="{{project.thumb}}" />
+  <div [@exitLeftAnimation]="_exitLeft" [@exitRightAnimation]="_exitRight" [@fadeIn]="_pageReady">
+    <h1>{{project.title}}</h1>
+    <h4 class="date">created: {{project.created | date:"MMM yyyy"}}<span *ngIf="project.modified">, modified: {{project.modified | date:"MMM yyyy"}}</span></h4>
+    <p>{{project.description}}</p>
+    <img class="thumb" *ngIf="project.thumb" src="{{project.thumb}}" />
+  </div>
 </app-inner-layout>

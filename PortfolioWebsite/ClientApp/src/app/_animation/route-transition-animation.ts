@@ -6,10 +6,11 @@ import {
   animateChild,
   query,
   group,
-  animation
+  animation,
+  AnimationTriggerMetadata
 } from '@angular/animations';
 
-export const routeTransitionAnimation = trigger('routeAnimations', [
+export const routeTransitionAnimation: AnimationTriggerMetadata = trigger('routeAnimations', [
   transition('* <=> *', [
     style({ position: 'relative' }),
     query(':enter, :leave', [

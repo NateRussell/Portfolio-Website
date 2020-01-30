@@ -128,7 +128,7 @@ export class ViewportService {
     return (element.getBoundingClientRect().top < viewportHeight * viewportRatio || this.scrolledToBottom);
   }
 
-  private waitForImages(): Observable<HTMLImageElement[]> {
+  public waitForImages(): Observable<HTMLImageElement[]> {
     let images: HTMLCollectionOf<HTMLImageElement> = document.images; //collection of all images on the page
     let imageLoadObservables: Observable<HTMLImageElement>[] = [];
 

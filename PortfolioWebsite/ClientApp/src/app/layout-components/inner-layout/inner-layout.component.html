@@ -1,2 +1,2 @@
-<div id="content" [class.hidden]="!viewportService.pageReady"><ng-content></ng-content></div>
-<div id="footer" [@fadeIn]="viewportService.pageReady"><app-footer></app-footer></div>
+<div id="content" [class.hidden]="!((pageReadyManualOverride && pageReady) || (!pageReadyManualOverride && viewportService.pageReady))"><ng-content></ng-content></div>
+<div id="footer" [@fadeIn]="(pageReadyManualOverride && pageReady) || (!pageReadyManualOverride && viewportService.pageReady)"><app-footer></app-footer></div>
